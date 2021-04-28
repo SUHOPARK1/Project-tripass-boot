@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Gradle : shop.tripass : api-0.0.1-SNAPSHOT.war (exploded) archive3">
+    <output-path>$PROJECT_DIR$/out/artifacts/Gradle___shop_tripass___api_0_0_1_SNAPSHOT_war__exploded__archive3</output-path>
+    <root id="archive" name="Gradle _ shop.tripass _ api-0.0.1-SNAPSHOT.war (exploded) archive.war">
+      <element id="artifact" artifact-name="Gradle : shop.tripass : api-0.0.1-SNAPSHOT.war (exploded)" />
+    </root>
+  </artifact>
+</component>

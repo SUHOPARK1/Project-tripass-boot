@@ -1,0 +1,68 @@
+# AWS
+spring:
+  datasource:
+    url: jdbc:mariadb://myinstance.cnh8mc5dakir.ap-northeast-2.rds.amazonaws.com/myinstance
+    driverClassName: org.mariadb.jdbc.Driver
+    username: myinstance
+    password: myinstance
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+
+#local mariadb
+#spring:
+#  datasource:
+#    url: jdbc:mariadb://localhost:3306/mariadb
+#    driverClassName: org.mariadb.jdbc.Driver
+#    username: root
+#    password: root
+#  jpa:
+#    open-in-view: true
+#    generate-ddl: true
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 950473409812-kpe4e1cnk8tf7cifci2e762o8ao3inja.apps.googleusercontent.com
+            client-secret: BQhnfWymas-kYQeqMqlQayQQ
+            scope: email, profile
+
+          naver:
+            client-id: YVXpYyG8Fj7Onl5iq4rH
+            client-secret: z5t0WcuWwE
+            scope: name, email, gender, age
+            client-name: Naver
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/login/oauth2/code/naver
+
+          kakao:
+            client-id: ca1c0a8a90108fe5bf42c19e001329ab
+            client-secret: qMBMP9qNmtn0RB1m0nMRqXFwef0HoTjb
+            scope: profile, account_email, age_range, gender
+            client-name: Kakao
+            client-authentication-method: POST
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/login/oauth2/code/kakao
+
+        provider:
+          naver:
+            authorization-uri: https://nid.naver.com/oauth2.0/authorize
+            token-uri: https://nid.naver.com/oauth2.0/token
+            user-info-uri: https://openapi.naver.com/v1/nid/me
+            user-name-attribute: response
+
+          kakao:
+            authorization-uri: https://kauth.kakao.com/oauth/authorize
+            token-uri: https://kauth.kakao.com/oauth/token
+            user-info-uri: https://kapi.kakao.com/v2/user/me
+            user-name-attribute: id
+
+auth:
+  tokenSecret: 926D96C90030DD58429D2751AC1BDBBC
+  tokenExpirationMsec: 864000000
